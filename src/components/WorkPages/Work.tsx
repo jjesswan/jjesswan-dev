@@ -14,8 +14,8 @@ import WorkItem from "./WorkItem";
 import info from "../../content/portfolioInfo";
 
 export default function Work() {
+  info.sort((a, b) => b.title.localeCompare(a.title));
  
-
   return (
     <div id="work" style={{ scrollSnapType: "y" }}>
       <Flex

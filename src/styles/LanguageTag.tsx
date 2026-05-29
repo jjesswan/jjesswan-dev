@@ -14,7 +14,7 @@ type CodeLang = {
 
 const allLangs: CodeLang[] = [
   { name: "html/css", color: "#FF6666" },
-  { name: "react", color: "#37ADF0" },
+  { name: "react.js", color: "#37ADF0" },
   { name: "java", color: "#8566FF" },
   { name: "c++", color: "#7AB470" },
   { name: "blender", color: "#ED9360" },

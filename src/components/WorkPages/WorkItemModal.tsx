@@ -75,7 +75,7 @@ export default function WorkItemModal(props: PortfolioInfo) {
             </GridItem>
             <GridItem area={"desc"} display="flex" justifyContent={"space-between"} flexDir="column" gap="2rem">     
                 <Flex flexDir={"column"} gap="2rem">
-                    <Flex justifyContent={"space-between"}>
+                    <Flex justifyContent={{md: "space-between", base: "center"}} alignItems={"center"} flexDir={{md: "row", base: "column"}} gap={{base: "1rem", md: "0"}}>
                         <Text variant="h3" lineHeight={"80%"} textAlign={{base: "center", md: "left"}}>
                             {props.title}
                         </Text>
@@ -91,8 +91,12 @@ export default function WorkItemModal(props: PortfolioInfo) {
                         </Tooltip>
 
                     </Flex>
+                   
                     <Text variant="type" color="blue" textAlign={{base: "center", md: "left"}}>
                         {props.desc}
+                    </Text>
+                     <Text variant="smallType" lineHeight={"80%"} textAlign={{base: "center", md: "left"}} display={props.role ? "block" : "none"}>
+                            Role: {props.role}
                     </Text>
                      <Text variant="type" color="black" textAlign={{base: "center", md: "left"}}>
                     <UnorderedList>

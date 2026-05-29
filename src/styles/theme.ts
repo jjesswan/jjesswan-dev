@@ -110,7 +110,7 @@ const components = {
       }),
       smallType: () => ({
         fontFamily: fonts.subtitle,
-        fontSize: ".4rem",
+        fontSize: ".6rem",
         color: "black",
       }),
       // HEADER
