@@ -1,0 +1,42 @@
+{
+  "name": "jessica-wan",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@chakra-ui/react": "^2.10.9",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fontsource/martel": "^5.2.8",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "framer-motion": "^10.18.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^5.6.0",
+    "react-player": "^3.4.0",
+    "react-router-dom": "^6.30.3",
+    "react-router-hash-link": "^2.4.3",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "start": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.3"
+  }
+}

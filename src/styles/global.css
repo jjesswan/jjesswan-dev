@@ -1,0 +1,90 @@
+/*
+RESET SETTINGS */
+
+/* set border-box (so that css uses a
+more reasonable box model, and so it’s
+like every other platform) */
+*, *::before, *::after {
+    box-sizing: border-box;
+    }
+
+/* get rid of default margins which
+vary depending on browser anyway, just
+set it yourself later*/
+* {
+    margin: 0;
+}
+
+    /* media elements are replaced elements
+which have a width based on the media,
+so we prevent it from expanding beyond
+its container, and take up a row */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* make tables look like spreadsheets
+and less like a spaced-out grid */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:root {
+  background-color: #f2f2f2; /* Replace with your desired color */
+}
+
+
+body{
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    color: "black"
+}
+
+html {
+  
+    @media screen and (1600px >= width) {
+        font-size: 16px;
+    }
+  
+
+    @media screen and (width > 1600px) {
+        font-size: 24px;
+    }
+
+    @media screen and (width > 1920px) {
+        font-size: 32px;
+    }
+
+    @media screen and (width > 2200px) {
+        font-size: 40px;
+    }
+}
+
+a{
+    color: red
+}
+
+div{
+    scroll-snap-type: y mandatory !important;
+    scroll-snap-align: center;
+}
+
+ /* SCROLLBAR */
+
+::-webkit-scrollbar-thumb:vertical {
+    background: #f2f2f2;;
+    border-radius: 15px;
+    height: 50px;
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 4px;
+}
+
+.react-player {
+  border-radius: 4rem !important;
+}
+
