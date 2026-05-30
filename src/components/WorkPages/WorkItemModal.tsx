@@ -34,7 +34,6 @@ export default function WorkItemModal(props: PortfolioInfo) {
 
     return (
          <Grid
-            scrollSnapType="y"
             templateAreas={{
                 md: `"desc image"`,
                 base: `"image" 
@@ -44,38 +43,43 @@ export default function WorkItemModal(props: PortfolioInfo) {
             gridTemplateColumns={{md: "1fr 1fr", base: "1fr" }}
             w="100%"
             h="100%"
-            bg="transparent"
-            _hover={{ bg: "red.500" }} 
-            transition="background 0.2s ease-in-out"
             gap="2rem"
             pr={{md: "0rem", base: "1rem" }}
         >
             <GridItem area={"image"} 
-            display="flex" 
-            justifyContent={"center"} 
-            alignItems="flex-start"
+                display="flex" 
+                justifyContent={"center"} 
+                alignItems="flex-start"
+                maxH={"95%"}
             >
                 <Flex
                 bgGradient={"linear-gradient(223deg,rgba(234, 239, 255, 1) 31%, rgba(255, 188, 189, 1) 87%);"}
-                w="100%"
-                padding={{md: "2rem", base: ".5rem"}}
+                padding={{md: "2rem", base: "1rem"}}
                 borderRadius={"1rem"}
+                justifyContent={"center"}
+                alignItems={"center"}
                 >
                     <Image
                     objectFit={props.dim === "wide" ? "contain" : "cover"}
                     src={props.image ? props.image : "/images/placeholder.png"}
                     borderRadius={".5rem"}
                     key={Date.now()}
-                    h={props.dim === "wide" ? "auto" : "80%"}
-
                 />
-
                 </Flex>
-                
             </GridItem>
-            <GridItem area={"desc"} display="flex" justifyContent={"space-between"} flexDir="column" gap="2rem">     
+            <GridItem 
+                area={"desc"} 
+                display="flex" 
+                justifyContent={"space-between"}
+                flexDir="column" gap="2rem"
+                maxH={"95%"}
+                >     
                 <Flex flexDir={"column"} gap="2rem">
-                    <Flex justifyContent={{md: "space-between", base: "center"}} alignItems={"center"} flexDir={{md: "row", base: "column"}} gap={{base: "1rem", md: "0"}}>
+                    <Flex 
+                    justifyContent={{md: "space-between", base: "center"}} 
+                    alignItems={"center"} 
+                    flexDir={{md: "row", base: "column"}} 
+                    gap="2rem">
                         <Text variant="h3" lineHeight={"80%"} textAlign={{base: "center", md: "left"}}>
                             {props.title}
                         </Text>
@@ -89,7 +93,6 @@ export default function WorkItemModal(props: PortfolioInfo) {
                                 ></Icon>
                             </ChakraLink>
                         </Tooltip>
-
                     </Flex>
                    
                     <Text variant="type" color="blue" textAlign={{base: "center", md: "left"}}>

@@ -16,9 +16,9 @@ const info: PortfolioInfo[] = [
   {
     title: "Origin Two",
     briefDesc: "An sci-fi platformer built on a custom 2D Java engine.",
-    desc: "A 2D platformer built entirely from scratch, encompassing a custom Java game and physics engine, a flexible UI toolkit, and game-specific systems for combat, platforming, progression, and AI.",
+    desc: "A 2D platformer built from scratch, encompassing a custom Java game and physics engine, a flexible UI toolkit, and game-specific systems for combat, platforming, level loading, progress save, and AI.",
     link: "https://github.com/jjesswan/origin-two",
-    linkLabel: "Github and demo",
+    linkLabel: "Github",
     role: null,
     tags: ["java", "javafx"],
     image: "/images/o2_demo.gif",
@@ -26,79 +26,71 @@ const info: PortfolioInfo[] = [
       ["Custom Java engine", 
         "Component-based architecture with physics, collisions, rendering, movement, input, UI, and audio systems."],
       ["Polygonal collision + physics responses", 
-        "Collision detection for both standard geometric and arbitrary shapes. Physics layer supports recoil, dampening (friction), and momentum impulse for realistic feel."],
+        "Collision detection for both primitive shapes and custom sprites. The physics layer supports mass-based recoil, dampening (friction), and impulse for realistic behavior."],
       [
         "Flexible UI toolkit",
-        "Reusable component system for menus, HUDs, and in-game overlays.",
+        "Reusable component system for menus, HUDs, and in-game overlays, including component nesting, alignment, parenting, and event handling.",
       ],
       ["Behavior tree AI + pathfinding", 
-        "Enemy logic driven by composable behavior trees. Navigation uses grid-traversal pathfinding system for dynamic obstacle avoidance."],
-      ["Original sprites and SFX Support", 
-        "Custom environment and sprite art with a modular asset pipeline for easy updates and additions. Uses open-source SFX libraries for sound design."],
+        "Enemy logic is driven by behavior trees. Pathfinding uses A* minimal distance graph traversal to find the optimal, non-blocked path to the target."],
+      ["Original sprites and SFX support", 
+        "Custom environment and sprite art with a streamlined asset creation pipeline for easy updates and additions. Uses open-source SFX libraries for sound design."],
     ],
     year: 2023,
     dim: null
   },
   {
     title: "Firmware JSON Manager",
-    briefDesc: "Webtool for firmware developers to quickly upload and edit firmware update JSONs to the Cloud.",
-    desc: "Owned the E2E firmware update pipeline for Onset's primary IoT product. Project was shipped to production as tooling for developer licenses.",
+    briefDesc: "Fullstack webapp for firmware developers to quickly upload and edit firmware JSONs to the Cloud.",
+    desc: "Designed and shipped a fullstack firmware update tool for Onset's primary IoT product, creating frontend and middleware infrastucture that helped developers efficiently manage firmware files and test updates in real time.",
     link: "https://www.licor.cloud/",
-    linkLabel: "Website",
-    role: "SWE Intern @ Onset",
-    tags: ["node.js", "prometheus", "nodered"],
+    linkLabel: "Company Website",
+    role: "SWE Intern @ LICOR (formerly) Onset",
+    tags: ["vue.js","typescript", "node.js", "prometheus", "nodered"],
     image: "/images/firmware_preview.gif",
     bullets: [
       [
-        "Internal firmware editing interface",
-        "Custom CRUD UI for adding, updating, and deleting firmware files directly in the NoSQL database (Davra). Replaced a manual process for the firmware team by packaging the entire firmware update pipeline into a single interface.",
+        "Internal file editing interface",
+        "Custom CRUD UI for uploading, updating, and deleting JSON-formated firmware files directly to the NoSQL cloud database. Replaced the previously time-intensive process for the engineering team by packaging the entire firmware update pipeline into a single interface.",
       ],
       [
-        "MQTT message emulation pipeline",
-        "To handle each JSON payload, I built a device emulator with NodeRed to emulate MQTT messages from IoT devices. Enables real-time testing and debugging of firmware update processes.",
-      ],
-      [
-        "Real-time device command processing",
-        "Parses incoming device commands in the middleware layer. Triggers the appropriate firmware actions immediately, with no polling delay.",
-      ],
-      [
-        "Live status feedback to broker",
-        "Sends device state updates back to the MQTT broker in real time, giving developers and operators instant visibility into update progress.",
+        "Pub-sub messaging emulator",
+        "To process each JSON payload, I also built a MQTT (Message Queuing Telemetry Transport) emulator with NodeRed to simulate the communication between devices and the cloud. The MQTT emulator processes firmware device-side commands in real time by parsing different message types and sending them to the backend. Then, after recieving the backend's response, it sends the appropriate follow-up messages back to the cloud to complete the firmware update cycle. This allows developers to test firmware updates in real time without needing to interact with physical devices or wait for scheduled update windows.",
       ],
     ],
     year: 2024,
     dim: "wide"
   },
   {
-    title: "Data Logger Weather Integration",
-    briefDesc: "Shipped a multi-layer GIS tool that overlays live IoT sensor data onto satellite, topo, and landmark maps.",
-    desc: "Built a geospatial visualization tool for environmental monitoring. Users can switch map styles and view device sensor readings alongside live weather data. Useful for both granular device inspection and regional trend analysis.",
-    link: null,
-    linkLabel: null,
+    title: "Data Logger Weather Map",
+    briefDesc: "A multi-layer GIS tool that overlays live weather sensor data onto satellite, topographical, and landmark maps.",
+    desc: "Built a geospatial visualization tool for environmental monitoring. Users can switch map styles and view device sensor readings alongside live weather data. Useful for both granular and regional analysis of environmental conditions.",
+    link: "https://www.licor.cloud/",
+    linkLabel: "Company Website",
     role: "SWE Intern @ Onset",
-    tags: ["vue.js", "node.js"],
+    tags: ["vue.js", "typescript", "node.js"],
     image: ["/images/windy_preview.gif", "/images/windy_preview2.gif"],
     bullets: [
       [
         "Three switchable map modes",
-        "Satellite, topographical, and landmark views via Windy API. Users toggle between them without reloading the page or losing state.",
+        "Satellite, topographical, and landmark overlays via Windy API. Users toggle between them without reloading the page or losing state.",
       ],
       [
-        "Real-time weather + IoT data overlay",
-        "Device-gathered sensor readings are directly displayed on the map alongside live weather data, providing geographically contextualized data insight.",
+        "Real-time weather + device data overlay",
+        "Device-gathered sensor readings are directly displayed on the map alongside live weather data, providing contextualized insights.",
       ],
-      ["Micro + macro zoom levels", 
-        "Allows users to explore data at different scales, from detailed local views to broader regional perspectives."],
-      ["Dynamic GIS API rendering", 
-        "Windy and Leaflet APIs are composed together client-side, with map tiles and data layers rendering dynamically as the user pans and zooms to offload server-side processing."],
+      [
+        "Interactive device markers",
+        "Users can place, move, and remove device markets on the map. Each marker displays the device's sensor readings and metadata on click, allowing for easy monitoring and analysis. Users can also connect markers with lines to visualize extension probes to larger devices.",
+      ]
     ],
     year: 2024,
     dim: "wide"
   },
   {
     title: "Brown CS Course Website",
-    briefDesc: "Built React site serving 100+ CS1300 (UI/UX) students through a full semester.",
-    desc: "Developed and maintained the official course website for Brown University's CS1300 (UI/UX), serving as the central hub for 100+ enrolled students. This platform streamlined course management and maintained reliability for students.",
+    briefDesc: "A React-based website serving 100+ CS1300 (UI/UX) students through a full semester.",
+    desc: "Developed and maintained the official course website for Brown University's CS1300 (Introduction to UI/UX Principles), serving as the central hub for 100+ enrolled students. This platform simplified course management and kept updated resources for students.",
     link: "https://talie.town/cs1300_spring24/",
     linkLabel: "Website",
     role: null,
@@ -106,12 +98,12 @@ const info: PortfolioInfo[] = [
     image: ["/images/cs1300_desktop.gif", "/images/cs1300_mobile.gif"],
     bullets: [
       [
-        "Production site for 100+ students",
+        "Course hub for 100+ students",
         "Primary resource for students throughout the semester with daily updates. Any downtime or broken pages affected the whole class, so reliability was critical.",
       ],
       [
         "Responsive, accessible layout",
-        "Mobile-first design ensures the site works across all screen sizes. Directly applies the responsive UI principles covered in CS1300 itself.",
+        "Mobile-first design ensures the site works across all screen sizes. Directly applies the responsive UI principles covered in CS1300.",
       ],
     ],
     year: 2024,
@@ -119,8 +111,8 @@ const info: PortfolioInfo[] = [
   },
   {
     title: "Syntax App",
-    desc: "A full-stack application that turns syntax practice into a fun, competitive experience. Users type real industry-level code, see AI explanations on mistakes, and track improvement over time against other users.",
-    briefDesc: "A full-stack typing app for coding syntax with educational GPT-3 explanations.",
+    desc: "A fullstack application that turns syntax practice into a fun, competitive experience. Users practice with real industry-level code, learn from AI explanations, and track improvement over time against other users.",
+    briefDesc: "A fullstack typing app for code language syntax with educational GPT-3 explanations.",
     link: "https://github.com/Syntax-App/syntax",
     linkLabel: "Github",
     role: "Frontend Developer",
@@ -129,10 +121,10 @@ const info: PortfolioInfo[] = [
     bullets: [
       [
         "Real code challenges across 3 languages",
-        "Typing prompts use actual Java, JavaScript, and Python code snippets pulled from large open-source codebases, such as Facebook and Google repos. Users get real practice with industry-level syntax and formatting.",
+        "Typing prompts use Java, JavaScript, and Python code snippets pulled from large open-source codebases, such as Facebook and Google repos, allowing users to practice speed-typing with both industry-level and purposeful coding styles.",
       ],
-      ["GPT-3 inline error explanations", 
-        "On each mistake, GPT-3 API returns a contextual explanation of the correct syntax."],
+      ["GPT-3 educational feedback", 
+        "After each challenge, users receive detailed, AI-generated explanations of the code they just typed, including syntax breakdowns, common pitfalls, and what the overall code snippet does. This transforms the app from a pure typing tool into an educational resource for learning programming languages."],
       [
         "Personal stats dashboard",
         "Tracks WPM, accuracy, and improvement over time per language.",
@@ -140,10 +132,6 @@ const info: PortfolioInfo[] = [
       [
         "Live leaderboard system",
         "Competitive ranking across users adds motivation and replayability beyond solo practice.",
-      ],
-      [
-        "Full-stack: React/TS frontend + Java backend",
-        "Coupled with Firebase data storage and Google Auth for user accounts.",
       ],
     ],
     year: 2023,
@@ -179,8 +167,8 @@ const info: PortfolioInfo[] = [
   // },
   {
     title: "Qualtrics Session Privacy API",
-    desc: "Built and deployed a JavaScript security layer on top of the Qualtrics API to protect sensitive student data during district-wide surveys. Used in production by Brown's Survey Research Center.",
-    briefDesc: "A session-locking and auth layer for Qualtrics surveys, live in Rhode Island school districts.",
+    desc: "Built and deployed a JavaScript security layer on top of the Qualtrics API to protect sensitive student data during school-issued surveys. Used by Brown School of Public Health Survey Research Center.",
+    briefDesc: "A session-locking and authentication layer for Qualtrics surveys, live in Rhode Island school districts.",
     link: "https://brown.co1.qualtrics.com/jfe/form/SV_9pmLnWs31ewSVca",
     linkLabel: "Try it out!",
     role: null,
@@ -188,20 +176,12 @@ const info: PortfolioInfo[] = [
     image: "/images/sessionprivacy_demo.gif",
     bullets: [
       [
-        "Configurable idle detection and screen lock",
+        "Idle detection and screen lock",
         "Monitors user inactivity and locks the survey screen based on a customizable timout to prevent unauthorized access.",
       ],
       [
         "Access code authentication to resume",
-        "Locked sessions require a valid access code before the survey is visible again. Session data and progress is fully preserved.",
-      ],
-      [
-        "Sensitive data masking",
-        "Hides personal data fields while session is locked.",
-      ],
-      [
-        "Live across multiple school districts",
-        "Deployed by Brown's School of Public Health Survey Research Center for real surveys across Rhode Island school districts.",
+        "Locked sessions require a valid access code before the survey is visible again. Session data and progress is fully preserved. Another timeout can be set to log out and clear data after extended inactivity.",
       ],
     ],
     year: 2022,
