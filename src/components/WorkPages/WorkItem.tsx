@@ -115,7 +115,7 @@ export default function WorkItem(props: WorkProps) {
           bg='whiteAlpha.300'
           backdropFilter='blur(10px)'
         />
-        <ModalContent bgColor={"#ffffff"} h={"80vh"} w="100vw" padding={"2rem"}>
+        <ModalContent bgColor={"#ffffff"} h={"80vh"} w="100vw" padding={{md: "2rem", base: "0rem"}} borderRadius={"1rem"} overflow="hidden">
           <ModalCloseButton size={"sm"}/>
           <ModalBody>
             <WorkItemModal title={props.title} desc={props.desc} link={props.link} linkLabel={props.linkLabel} role={props.role} tags={props.tags} image={getPreviewImage(1)} bullets={props.bullets} year={props.year} dim={props.dim} />

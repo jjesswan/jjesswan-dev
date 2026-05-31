@@ -44,7 +44,8 @@ export default function WorkItemModal(props: PortfolioInfo) {
             w="100%"
             h="100%"
             gap="2rem"
-            pr={{md: "0rem", base: "1rem" }}
+            pr={{md: "0rem", base: ".5rem" }}
+            overflowX={"hidden"}
         >
             <GridItem area={"image"} 
                 display="flex" 
