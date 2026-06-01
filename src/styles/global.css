@@ -13,6 +13,7 @@ vary depending on browser anyway, just
 set it yourself later*/
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
     /* media elements are replaced elements

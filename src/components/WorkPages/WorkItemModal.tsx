@@ -43,7 +43,7 @@ export default function WorkItemModal(props: PortfolioInfo) {
             gridTemplateColumns={{md: "1fr 1fr", base: "1fr" }}
             w="100%"
             h="100%"
-            gap="2rem"
+            gap="1rem"
             pr={{md: "0rem", base: ".5rem" }}
             overflowX={"hidden"}
         >
@@ -51,37 +51,39 @@ export default function WorkItemModal(props: PortfolioInfo) {
                 display="flex" 
                 justifyContent={"center"} 
                 alignItems="flex-start"
-                maxH={"95%"}
             >
                 <Flex
                 bgGradient={"linear-gradient(223deg,rgba(234, 239, 255, 1) 31%, rgba(255, 188, 189, 1) 87%);"}
-                padding={{md: "2rem", base: "1rem"}}
+                padding={{md: "1rem", base: "1rem"}}
                 borderRadius={"1rem"}
                 justifyContent={"center"}
                 alignItems={"center"}
+                w={props.dim === "wide" ? "100%" : "70%"}
                 >
                     <Image
                     objectFit={props.dim === "wide" ? "contain" : "cover"}
                     src={props.image ? props.image : "/images/placeholder.png"}
                     borderRadius={".5rem"}
                     key={Date.now()}
+                    
                 />
                 </Flex>
             </GridItem>
             <GridItem 
                 area={"desc"} 
                 display="flex" 
+                flexDir="column" 
+                gap={{md: ".5rem", base: "2rem"}}
+                overflowY={{md: "scroll", base: "visible"}}
                 justifyContent={"space-between"}
-                flexDir="column" gap="2rem"
-                maxH={"95%"}
                 >     
-                <Flex flexDir={"column"} gap="2rem">
+                <Flex flexDir={"column"} gap={{lg: "1rem", base: "2rem"}}>
                     <Flex 
                     justifyContent={{md: "space-between", base: "center"}} 
                     alignItems={"center"} 
                     flexDir={{md: "row", base: "column"}} 
                     gap="2rem">
-                        <Text variant="h3" lineHeight={"80%"} textAlign={{base: "center", md: "left"}}>
+                        <Text variant="h3" lineHeight={"100%"} textAlign={{base: "center", md: "left"}}>
                             {props.title}
                         </Text>
                         <Tooltip label={props.linkLabel} placement="left" hasArrow bg="blue" fontSize={".7rem"}> 
