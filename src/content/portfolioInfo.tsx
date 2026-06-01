@@ -37,7 +37,7 @@ const info: PortfolioInfo[] = [
         "Custom environment and sprite art with a streamlined asset creation pipeline for easy updates and additions. Uses open-source SFX libraries for sound design."],
     ],
     year: 2023,
-    dim: null
+    dim: "wide"
   },
   {
     title: "Firmware JSON Manager",
@@ -185,7 +185,7 @@ const info: PortfolioInfo[] = [
       ],
     ],
     year: 2022,
-    dim: null
+    dim: "wide"
   },
 ];
 
