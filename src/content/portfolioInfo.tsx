@@ -187,6 +187,20 @@ const info: PortfolioInfo[] = [
     year: 2022,
     dim: "wide"
   },
+  // {
+  //   title: "The Silver Lining",
+  //   desc: "A data visualization landing page on the hidden cost of captivity, tracing how zoos shorten lifespans and reduce populations of endangered species.",
+  //   briefDesc: "A visual look at captivity's toll on endangered species.",
+  //   link: "https://dataviz-zoo.vercel.app/",
+  //   linkLabel: "Visit Website",
+  //   role: null,
+  //   tags: ["javascript", "html/css", "react.js", "python", "R"],
+  //   image: "/images/silver_lining_demo.gif",
+  //   bullets: [
+  //   ],
+  //   year: 2022,
+  //   dim: "wide"
+  // },
 ];
 
 export default info;
