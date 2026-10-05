@@ -47,27 +47,22 @@ export default function WorkItemModal(props: PortfolioInfo) {
             pr={{md: "0rem", base: ".5rem" }}
             overflowX={"hidden"}
         >
-            <GridItem area={"image"} 
-                display="flex" 
-                justifyContent={"center"} 
-                alignItems="flex-start"
+            <GridItem
+            area={"image"}
+            minH={0}
+            minW={0}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
             >
-                <Flex
-                bgGradient={"linear-gradient(223deg,rgba(234, 239, 255, 1) 31%, rgba(255, 188, 189, 1) 87%);"}
-                padding={{md: "1rem", base: "1rem"}}
-                borderRadius={"1rem"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                w={props.dim === "wide" ? "100%" : "70%"}
-                >
-                    <Image
-                    objectFit={props.dim === "wide" ? "contain" : "cover"}
-                    src={props.image ? props.image : "/images/placeholder.png"}
-                    borderRadius={".5rem"}
-                    key={Date.now()}
-                    
-                />
-                </Flex>
+            <Image
+                src={props.image ?? "/images/placeholder.png"}
+                w="auto"
+                h="auto"
+                maxW="100%"
+                maxH={{ base: "60vh", md: "100%" }}
+                borderRadius="1rem"
+            />
             </GridItem>
             <GridItem 
                 area={"desc"} 

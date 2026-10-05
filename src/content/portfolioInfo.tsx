@@ -12,7 +12,34 @@ type PortfolioInfo = {
     dim: string | null
 }
 
-const info: PortfolioInfo[] = [
+const info: PortfolioInfo[] = 
+[
+  {
+    title: "Starmap",
+    briefDesc: "A space-themed habit-tracker app that doesn't punish users.",
+    desc: "A habit-tracking app that encourages users to build positive habits by rewarding them with a growing starfield. Users can track their habits, view progress, and receive motivational feedback without the stress of negative reinforcement.",
+    link: "https://www.figma.com/proto/zdHI6tpgx7riLNYf7xBDtL/Starmap-%E2%80%94-Hi-fi?node-id=23-4708&p=f&t=JliqC4RU5pkSgErO-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A167",
+    linkLabel: "Prototype",
+    role: null,
+    tags: ["figma", "claude design"],
+    image: ["/images/starmap_preview.gif", "/images/starmap_demo.gif"],
+    bullets: [
+      ["Custom Java engine", 
+        "Component-based architecture with physics, collisions, rendering, movement, input, UI, and audio systems."],
+      ["Polygonal collision + physics responses", 
+        "Collision detection for both primitive shapes and custom sprites. The physics layer supports mass-based recoil, dampening (friction), and impulse for realistic behavior."],
+      [
+        "Flexible UI toolkit",
+        "Reusable component system for menus, HUDs, and in-game overlays, including component nesting, alignment, parenting, and event handling.",
+      ],
+      ["Behavior tree AI + pathfinding", 
+        "Enemy logic is driven by behavior trees. Pathfinding uses A* minimal distance graph traversal to find the optimal, non-blocked path to the target."],
+      ["Original sprites and SFX support", 
+        "Custom environment and sprite art with a streamlined asset creation pipeline for easy updates and additions. Uses open-source SFX libraries for sound design."],
+    ],
+    year: 2026,
+    dim: null
+  },
   {
     title: "Origin Two",
     briefDesc: "An sci-fi platformer built on a custom 2D Java engine.",
