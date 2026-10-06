@@ -16,7 +16,7 @@ const info: PortfolioInfo[] =
 [
   {
     title: "Starmap",
-    briefDesc: "A space-themed habit-tracker app that doesn't punish users.",
+    briefDesc: "A space-themed habit-tracker app that doesn't punish failures.",
     desc: "A habit-tracking app that encourages users to build positive habits by rewarding them with a growing starfield. Users can track their habits, view progress, and receive motivational feedback without the stress of negative reinforcement.",
     link: "https://www.figma.com/proto/zdHI6tpgx7riLNYf7xBDtL/Starmap-%E2%80%94-Hi-fi?node-id=23-4708&p=f&t=JliqC4RU5pkSgErO-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A167",
     linkLabel: "Prototype",
